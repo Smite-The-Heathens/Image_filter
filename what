@@ -1,0 +1,15 @@
+from PIL import Image
+
+myImage = Image.open("lake.png")
+pixels = myImage.load()
+
+width, height = myImage.size
+for y in range(0,height):
+     for x in range(0,width):
+          oldColor = pixels[x,y]
+          red = oldColor[0]
+          green = oldColor[1]
+          blue = oldColor[2]
+          pixels[x,y] = (red, green, blue)
+
+myImage.show()
